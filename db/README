@@ -1,0 +1,1 @@
+Directory for databases data store file. Incase we use mysql or mongo, the data file would reside in this directory.
