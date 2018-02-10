@@ -11,4 +11,4 @@ PI_VERSION = 1
 # Possible values :
 #   BOARD
 #   BCM
-PIN_SCHEME = "BOARD"
+PIN_SCHEME = "BCM"
