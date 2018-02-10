@@ -15,8 +15,9 @@ class Board(object):
             GPIO.setmode(GPIO.BCM)    
 
     def destroy(self):
-        print "GPIO.cleanup()"
-        GPIO.cleanup()
+        #print "GPIO.cleanup()"
+        #GPIO.cleanup()
+        pass
 
 class Hardware(object):
     '''
