@@ -1,4 +1,5 @@
 
+import time
 from RPi import GPIO
 from config import settings
 from hardware import Hardware
@@ -16,6 +17,9 @@ class LED(Hardware):
     def off(self):
         print "GPIO.output(self.led_pin, GPIO.LOW)"
         GPIO.output(self.led_pin, GPIO.LOW)
-    def blink(self):
-        pass
-
+    def blink(self, count=1, on_duration_sec=1, off_duration_sec=1):
+        for i in range(count):
+            self.on()
+            time.sleep(on_duration_sec)
+            self.off()
+            time.sleep(off_duration_sec)
