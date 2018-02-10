@@ -8,11 +8,14 @@ class Board(object):
     '''
     def __init__(self):
         if settings.PIN_SCHEME == "BOARD":
+            print "GPIO.setmode(GPIO.BOARD)"
             GPIO.setmode(GPIO.BOARD)    
         else:
+            print "GPIO.setmode(GPIO.BCM)"
             GPIO.setmode(GPIO.BCM)    
 
     def destroy(self):
+        print "GPIO.cleanup()"
         GPIO.cleanup()
 
 class Hardware(object):

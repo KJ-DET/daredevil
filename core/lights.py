@@ -1,10 +1,11 @@
 
 import time
-from hardware import LED
+from hardware.led import LED
 
-def blink_once()
+def blink_once():
+    print "inside blink_once"
     led_1 = LED(12)
 
-    led.on()
+    led_1.on()
     time.sleep(30)
-    led.off()
+    led_1.off()
