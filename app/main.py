@@ -1,9 +1,12 @@
 
 from hardware.hardware import Board
 from core import lights
+from core import DistanceLED.py
 
-board = Board()
-lights.blink_5_times()
-
-
-board.destroy()
+try:
+    board = Board()
+#lights.blink_5_times()
+    DistanceLEd.loop()
+    
+except KeyboardInterrupt:
+    board.destroy()
