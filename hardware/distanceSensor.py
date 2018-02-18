@@ -9,12 +9,14 @@ class DistanceSensor(Hardware):
         self.name = name
         self.echo_pin = echo_pin
         self.trigger_pin = trigger_pin
+
         print "Initialzing DistanceSensor::" , self.name 
         print "EchoPin is " , self.echo_pin
-        print "Trigger Pin is ", self_trigger_pin
+        print "Trigger Pin is ", self.trigger_pin
+
         GPIO.setup(self.echo_pin,GPIO.IN)
         GPIO.setup(self.trigger_pin,GPIO.OUT)
-        GPIO.output(self.trigger_in,False)
+        GPIO.output(self.trigger_pin,False)
         print "reseting trigger"
         time.sleep(2)
         

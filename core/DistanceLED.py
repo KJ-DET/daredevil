@@ -1,7 +1,7 @@
 
 import time
 from hardware.led import LED
-from hardware.distanceSensor import DistanceSenosr
+from hardware.distanceSensor import DistanceSensor
 
 
 def loop():

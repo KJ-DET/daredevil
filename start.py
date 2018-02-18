@@ -2,5 +2,5 @@
 
 #import app.main
 
-import app.main2
+import app.main
 
