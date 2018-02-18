@@ -5,7 +5,7 @@
 # possible values :
 #   1 - Kanika's old board
 #   3 - One supplied by Hackathon organizers.
-PI_VERSION = 1 
+PI_VERSION = 3 
 
 # Pin scheme
 # Possible values :

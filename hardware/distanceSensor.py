@@ -37,6 +37,8 @@ class DistanceSensor(Hardware):
         time_taken = stop_time - start_time
         distance = (time_taken*34300)/2
 
+        print self.name , 'distance=' , distance
+
         return distance
 
     
