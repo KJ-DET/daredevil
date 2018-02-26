@@ -8,24 +8,24 @@ class VibrationMotor(Hardware):
         self.name = name
         self.GPIO_MOTOR = GPIO_MOTOR
         print 'Initializing Vibration Motor'
-        GPIO.setup(GPIO_MOTOR,GPIO.OUT)
-        GPIO.output(GPIO_MOTOR,GPIO.LOW)
+        GPIO.setup(self.GPIO_MOTOR,GPIO.OUT)
+        GPIO.output(self.GPIO_MOTOR,GPIO.LOW)
         time.sleep(2)
 
     def motor_on(self):
-        GPIO.output(GPIO_MOTOR,GPIO.HIGH)
+        GPIO.output(self.GPIO_MOTOR,GPIO.HIGH)
 
     def motor_off(self):
-        GPIO.output(GPIO_MOTOR,GPIO.LOW)
+        GPIO.output(self.GPIO_MOTOR,GPIO.LOW)
 
     def vibrate_slow(self):
-        motor_on(self)
+        self.motor_on()
         time.sleep(0.15)
-        motor_off(self)
+        self.motor_off()
         time.sleep(0.5)
         
     def vibrate_fast(self):
-        motor_on(self)
+        self.motor_on()
         time.sleep(0.5)
-        motor_off(self)
+        self.motor_off()
         time.sleep(0.15)

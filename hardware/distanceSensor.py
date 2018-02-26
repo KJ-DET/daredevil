@@ -21,11 +21,13 @@ class DistanceSensor(Hardware):
         time.sleep(2)
 
     def send_soundwave(self):
+        print "Sending Soundwave for ::" ,self.name
         GPIO.output(self.GPIO_TRIG,True)
         time.sleep(0.0000001)
         GPIO.output(self.GPIO_TRIG,False)
 
     def get_pulse_duration(self):
+        print "Getting pulse duration for ::" ,self.name
         start_time = time.time()
 
         while GPIO.input(self.GPIO_ECHO)==0:
@@ -38,14 +40,17 @@ class DistanceSensor(Hardware):
         return time_taken
 
     def compute_distance(self,duration):
+        print "Computing distance for ::" ,self.name
         d = 343*duration/2
         print self.name, 'distance=', d
         return d
 
     def get_distance(self):
-        send_soundwave(self)
-        duration = get_pulse_duration(self)
-        return compute_distance(self,duration)*100	 
+        print "Getting distance for ::" ,self.name
+
+        self.send_soundwave()
+        duration = self.get_pulse_duration()
+        return self.compute_distance(duration)*100	 
 
     def measure_distance(self):
         print "Measuring distance"
