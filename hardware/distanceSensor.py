@@ -20,12 +20,12 @@ class DistanceSensor(Hardware):
         print "reseting trigger"
         time.sleep(2)
 
-   def send_soundwave(self):
-	GPIO.output(GPIO_TRIG,True)
-	time.sleep(0.0000001) # 10 microseconds
-	GPIO.output(GPIO_TRIG,False) 
- 
-   def get_pulse_duration(self):
+    def send_soundwave(self):
+        GPIO.output(self.GPIO_TRIG,True)
+        time.sleep(0.0000001)
+        GPIO.output(self.GPIO_TRIG,False)
+
+    def get_pulse_duration(self):
         start_time = time.time()
 
         while GPIO.input(self.GPIO_ECHO)==0:
@@ -35,17 +35,17 @@ class DistanceSensor(Hardware):
             stop_time = time.time()
         
         time_taken = stop_time - start_time
-	return time_taken
+        return time_taken
 
-   def compute_distance(self,duration):
-	d = 343*duration/2
-        print self.name, 'distance=' = d
-	return d
+    def compute_distance(self,duration):
+        d = 343*duration/2
+        print self.name, 'distance=', d
+        return d
 
-   def get_distance(self):
-	send_soundwave(self)
-	duration = get_pulse_duration(self)
-	return compute_distance(self,duration)*100	 
+    def get_distance(self):
+        send_soundwave(self)
+        duration = get_pulse_duration(self)
+        return compute_distance(self,duration)*100	 
 
     def measure_distance(self):
         print "Measuring distance"

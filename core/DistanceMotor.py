@@ -10,7 +10,7 @@ def loop():
     centerS = DistanceSensor("CenterSensor",23,17)
     rightS = DistanceSensor("RightSensor",22,24)
     leftM = VibrationMotor("LeftMotor", 18)
-    rightM = VibrationMotor("RightMotor" 12)
+    rightM = VibrationMotor("RightMotor", 12)
 
     led = LED(27)
 
