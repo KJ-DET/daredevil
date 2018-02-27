@@ -23,7 +23,7 @@ class DistanceSensor(Hardware):
     def send_soundwave(self):
         print "Sending Soundwave for ::" ,self.name
         GPIO.output(self.GPIO_TRIG,True)
-        time.sleep(0.0000001)
+        time.sleep(0.00001)
         GPIO.output(self.GPIO_TRIG,False)
 
     def get_pulse_duration(self):
@@ -41,7 +41,7 @@ class DistanceSensor(Hardware):
 
     def compute_distance(self,duration):
         print "Computing distance for ::" ,self.name
-        d = 343*duration/2
+        d = 34300*duration/2
         print self.name, 'distance=', d
         return d
 
@@ -50,7 +50,7 @@ class DistanceSensor(Hardware):
 
         self.send_soundwave()
         duration = self.get_pulse_duration()
-        return self.compute_distance(duration)*100	 
+        return self.compute_distance(duration)	 
 
     def measure_distance(self):
         print "Measuring distance"

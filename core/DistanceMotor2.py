@@ -1,6 +1,5 @@
-
 import time as time
-from hardware.led import LED
+#from hardware.led import LED
 from hardware.distanceSensor import DistanceSensor
 from hardware.vibrationMotor import VibrationMotor
 
@@ -12,17 +11,34 @@ def loop():
     leftM = VibrationMotor("LeftMotor", 18)
     rightM = VibrationMotor("RightMotor", 12)
 
-    led = LED(27)
+#    led = LED(27)
 
     while True:
-        if leftS.get_distance() <=50 :
-            leftM.vibrate_slow()
-        if rightS.get_distance() <= 50:
-            rightM.vibrate_slow()
-        if centerS.get_distance() <=50:
+        ld = leftS.get_distance()
+        rd = rightS.get_distance()
+        cd= centerS.get_distance()
+
+        if ld <=50 and rd <=50 and cd <=50 :
             leftM.vibrate_fast() 
             rightM.vibrate_fast()
+        elif ld <=50 and rd <= 50:
+            leftM.vibrate_slow()
+            rightM.vibrate_slow()
+        elif rd() <= 50 and cd <=50:
+            rightM.vibrate_fast()
+        elif ld() <= 50 and cd <=50:
+            leftM.vibrate_fast()
+        elif rd <= 50:
+            rightM.vibrate_slow()
+        elif ld <= 50:
+            leftM.vibrate_slow()
+        elif cd <= 50:
+            leftM.vibrate_continous()
+        else
+            leftM.off()
+            rightM.off()
         time.sleep(1)
+    
     #while True:
      #   if rightS.measure_distance() < 50 :
       #      led.blink(count=2)

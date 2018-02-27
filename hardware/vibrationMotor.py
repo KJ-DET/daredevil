@@ -19,13 +19,23 @@ class VibrationMotor(Hardware):
         GPIO.output(self.GPIO_MOTOR,GPIO.LOW)
 
     def vibrate_slow(self):
+        print 'running motor slow:',self.name
         self.motor_on()
         time.sleep(0.15)
         self.motor_off()
         time.sleep(0.5)
         
     def vibrate_fast(self):
+        print 'running motor fast:', self.name
         self.motor_on()
         time.sleep(0.5)
         self.motor_off()
         time.sleep(0.15)
+
+    def vibrate_continous(self):
+        print 'running motor continous:',self.name
+        self.motor_on()
+        time.sleep(1)
+        self.motor_off()
+        time.sleep(0.5)
+        
