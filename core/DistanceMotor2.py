@@ -18,25 +18,25 @@ def loop():
         rd = round(rightS.get_distance(),1)
         cd= round(centerS.get_distance(),1)
 
-        if ld <=50.0 and rd <=50.0 and cd <=50.0 :
+        if (ld <=50.0) and (rd <=50.0) and (cd <=50.0) :
             leftM.vibrate_fast() 
             rightM.vibrate_fast()
-        elif ld <=50.0 and rd <= 50.0:
+        elif (ld <=50.0) and (rd <= 50.0) :
             leftM.vibrate_slow()
             rightM.vibrate_slow()
-        elif rd() <= 50.0 and cd <=50.0:
+        elif (rd <= 50.0) and (cd <=50.0):
             rightM.vibrate_fast()
-        elif ld() <= 50.0 and cd <=50.0:
+        elif (ld <= 50.0) and (cd <=50.0):
             leftM.vibrate_fast()
-        elif rd <= 50.0:
+        elif (rd <= 50.0):
             rightM.vibrate_slow()
-        elif ld <= 50.0:
+        elif (ld <= 50.0):
             leftM.vibrate_slow()
-        elif cd <= 50.0:
+        elif (cd <= 50.0):
             leftM.vibrate_continous()
         else:
-            leftM.off()
-            rightM.off()
+            leftM.motor_off()
+            rightM.motor_off()
         time.sleep(1)
     
     #while True:
