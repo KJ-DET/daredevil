@@ -14,27 +14,27 @@ def loop():
 #    led = LED(27)
 
     while True:
-        ld = leftS.get_distance()
-        rd = rightS.get_distance()
-        cd= centerS.get_distance()
+        ld = round(leftS.get_distance(),1)
+        rd = round(rightS.get_distance(),1)
+        cd= round(centerS.get_distance(),1)
 
-        if ld <=50 and rd <=50 and cd <=50 :
+        if ld <=50.0 and rd <=50.0 and cd <=50.0 :
             leftM.vibrate_fast() 
             rightM.vibrate_fast()
-        elif ld <=50 and rd <= 50:
+        elif ld <=50.0 and rd <= 50.0:
             leftM.vibrate_slow()
             rightM.vibrate_slow()
-        elif rd() <= 50 and cd <=50:
+        elif rd() <= 50.0 and cd <=50.0:
             rightM.vibrate_fast()
-        elif ld() <= 50 and cd <=50:
+        elif ld() <= 50.0 and cd <=50.0:
             leftM.vibrate_fast()
-        elif rd <= 50:
+        elif rd <= 50.0:
             rightM.vibrate_slow()
-        elif ld <= 50:
+        elif ld <= 50.0:
             leftM.vibrate_slow()
-        elif cd <= 50:
+        elif cd <= 50.0:
             leftM.vibrate_continous()
-        else
+        else:
             leftM.off()
             rightM.off()
         time.sleep(1)
